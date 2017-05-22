@@ -1,0 +1,25 @@
+<!--
+
+解决思路：分成左右两部分
+	右半部分：大矩形先盖住小矩形  小矩形的背景颜色是黄色  大矩形的颜色是红色
+	然后大矩形左旋转 旋转中心是left center, 并且最后的效果停留在最后一个关键帧。
+  左半部分相似。但是左半部分动画需要设置延迟！
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>task two</title>
+</head>
+<body>
+<div id="content">
+	<div id="left">
+		<div id="left_rect"></div>
+	</div>
+	<div id="right">
+		<div id="right_rect"></div>
+	</div>
+	<div style="clear: both;"></div>
+</div>
+</body>
+</html>
