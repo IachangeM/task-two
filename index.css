@@ -1,0 +1,80 @@
+@keyframes myMove{  /*设置关键帧：左右两部分的 起始帧 和 结束帧 */
+	from{		
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);/*兼容性-下同*/
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(180deg);
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+	}
+}
+#content{
+	height: 300px;
+	width: 600px;
+	position: relative;
+	left: 200px;
+	top:100px;
+	padding: 50px;
+}
+#left{
+	height: 200px;
+	width: 100px;
+	border: none;
+	float: left;
+	overflow: hidden;
+	background-color: yellow;
+}
+#right{
+	height: 200px;
+	width: 100px;
+	border: none;
+	float: left;
+	overflow: hidden;
+	background-color: yellow;
+}
+#right_rect{
+	height: 300px;
+	width: 200px;
+	position: relative;
+	top:-50px;
+	background-color: red;
+
+	transform-origin: left center;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-ms-transform-origin: left center;
+	-o-transform-origin: left center;
+
+	animation: myMove 3s forwards linear;
+	-webkit-animation: myMove 3s forwards linear;
+	-moz-animation: myMove 3s forwards linear;
+	-ms-animation: myMove 3s forwards linear;
+	-o-animation: myMove 3s forwards linear;
+}
+#left_rect{
+	height: 300px;
+	width: 200px;
+	position: relative;
+	top:-50px;
+	left:-98px; /* 这里略微小于100px 否则动画结束会留下一条线*/
+	background-color: red;
+	
+
+	transform-origin: right center;
+	-webkit-transform-origin: right center;
+	-moz-transform-origin: right center;
+	-ms-transform-origin: right center;
+	-o-transform-origin: right center;
+
+	animation: myMove 3s forwards 3s linear; /* 左边的动画延迟3s 即等待右边的动画先完成 */
+	-webkit-animation: myMove 3s forwards 3s linear;
+	-moz-animation: myMove 3s forwards 3s linear;
+	-ms-animation: myMove 3s forwards 3s linear;
+	-o-animation: myMove 3s forwards 3s linear;
+}
